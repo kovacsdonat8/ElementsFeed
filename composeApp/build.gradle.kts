@@ -58,6 +58,11 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
+            implementation("io.ktor:ktor-client-core:3.1.3")
+            implementation("io.ktor:ktor-serialization-kotlinx-json:3.1.3")
+            implementation("io.ktor:ktor-client-content-negotiation:3.1.3")
+            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.2")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
