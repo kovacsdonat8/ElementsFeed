@@ -48,6 +48,7 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation("io.ktor:ktor-client-android:3.1.3")
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -70,6 +71,11 @@ kotlin {
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutinesSwing)
+            implementation("io.ktor:ktor-client-okhttp:3.1.3")
+        }
+        wasmJsMain.dependencies {
+            implementation(compose.web.core)
+            implementation("io.ktor:ktor-client-js:3.1.3")
         }
     }
 }

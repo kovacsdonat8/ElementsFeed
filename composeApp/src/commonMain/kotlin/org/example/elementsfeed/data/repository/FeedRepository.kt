@@ -100,4 +100,13 @@ class FeedRepository {
         currentItems.add(0, item)
         _feedItems.value = currentItems
     }
+
+    fun addCommand(commandText: String) {
+        val command = FeedItem.Command(
+            id = "command_${Clock.System.now().toEpochMilliseconds()}",
+            command = commandText,
+            timestamp = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
+        )
+        addFeedItem(command)
+    }
 }
