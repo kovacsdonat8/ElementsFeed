@@ -9,6 +9,7 @@ sealed class FeedItem {
     data class Feed(
         override val id: String,
         val content: String,
+        val imageUrl: String,
         override val timestamp: LocalDateTime
     ) : FeedItem()
 

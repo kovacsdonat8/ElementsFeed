@@ -50,6 +50,7 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation("io.ktor:ktor-client-android:3.1.3")
+            implementation("io.coil-kt.coil3:coil-network-ktor3-android:3.2.0")
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -65,6 +66,8 @@ kotlin {
             implementation("io.ktor:ktor-serialization-kotlinx-json:3.1.3")
             implementation("io.ktor:ktor-client-content-negotiation:3.1.3")
             implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.2")
+            implementation("io.coil-kt.coil3:coil-compose:3.2.0")
+            implementation("io.coil-kt.coil3:coil-network-ktor3:3.2.0")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -73,12 +76,15 @@ kotlin {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutinesSwing)
             implementation("io.ktor:ktor-client-okhttp:3.1.3")
+            implementation("io.coil-kt.coil3:coil-network-ktor3-jvm:3.2.0")
         }
         wasmJsMain.dependencies {
             implementation("io.ktor:ktor-client-js:3.1.3")
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
+            implementation("io.coil-kt.coil3:coil-compose-wasm-js:3.2.0")
+            implementation("io.coil-kt.coil3:coil-network-ktor3-wasm-js:3.2.0")
         }
     }
 }

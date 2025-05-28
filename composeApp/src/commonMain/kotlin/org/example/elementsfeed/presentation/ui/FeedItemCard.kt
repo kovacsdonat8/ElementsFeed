@@ -21,8 +21,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.layout.ContentScale
 import org.example.elementsfeed.data.model.FeedItem
 import org.example.elementsfeed.presentation.ui.util.formatTimestamp
+import coil3.compose.AsyncImage
 
 @Composable
 fun FeedItemCard(item: FeedItem) {
@@ -52,6 +54,15 @@ fun FeedItemCard(item: FeedItem) {
             // Content
             when (item) {
                 is FeedItem.Feed -> {
+                    AsyncImage(
+                        model = item.imageUrl,
+                        contentDescription = "Product image",
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(200.dp)
+                            .padding(vertical = 8.dp),
+                        contentScale = ContentScale.Fit
+                    )
                     Text(
                         text = item.content,
                         style = MaterialTheme.typography.bodyMedium,

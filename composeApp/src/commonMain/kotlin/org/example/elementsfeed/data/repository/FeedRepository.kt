@@ -75,9 +75,13 @@ class FeedRepository {
             onSuccess = { response ->
                 if (response.products.isNotEmpty()) {
                     val product = response.products.first()
+                    val imageUrl = product.thumbnail.ifEmpty {
+                        product.images.firstOrNull().orEmpty()
+                    }
                     val feedItem = FeedItem.Feed(
                         id = "feed_${product.id}_${currentSkip}",
                         content = product.description,
+                        imageUrl = imageUrl,
                         timestamp = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
                     )
 
