@@ -25,6 +25,7 @@ class ApiClient {
                 parameter("limit", 1)
                 parameter("skip", skip)
             }.body()
+            println("Response: $response")
             Result.success(response)
         } catch (e: Exception) {
             Result.failure(e)
